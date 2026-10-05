@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة متابعة برنامج التدقيق الداخلي 2026-2027 - الجامعة الليبية الدولية</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts: Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        limu: {
+                            navy: '#0f2b48',
+                            blue: '#1b4965',
+                            teal: '#62b6cb',
+                            lightteal: '#bee9e8',
+                            accent: '#d4af37',
+                            red: '#c0392b',
+                            bg: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .tab-btn.active {
+            background-color: #0f2b48;
+            color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="bg-gradient-to-r from-limu-navy via-limu-blue to-limu-navy text-white shadow-lg sticky top-0 z-40 border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <!-- Logo & Title -->
+                <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-start">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-white p-1.5 shadow-md flex items-center justify-center">
+                            <i class="fa-solid me-0 fa-university text-limu-navy text-2xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-lg font-bold leading-tight">الجامعة الليبية الدولية</h1>
+                            <p class="text-xs text-slate-300 font-medium">إدارة الجودة الشاملة | وحدة التدقيق الداخلي</p>
+                        </div>
+                    </div>
+                    <!-- Badge -->
+                    <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-400/30">
+                        <i class="fa-solid fa-file-signature text-amber-400 me-1.5"></i> LIMU-TQM-AUD-P-01
+                    </span>
+                </div>
+
+                <!-- Strategic Context Info -->
+                <div class="flex items-center gap-3 text-xs bg-white/10 px-4 py-2 rounded-xl backdrop-blur-sm border border-white/10 w-full md:w-auto justify-around">
+                    <div>
+                        <span class="text-slate-300 block">الفترة الزمنية:</span>
+                        <span class="font-bold text-white">17 أكتوبر 2026 – 31 يوليو 2027</span>
+                    </div>
+                    <div class="h-8 w-px bg-white/20"></div>
+                    <div>
+                        <span class="text-slate-300 block">النسبة والاستبعاد:</span>
+                        <span class="font-bold text-emerald-400">تغطية 100% (0% استبعاد)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+        <!-- Banner & Quick Action Header -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-xs font-semibold text-limu-blue">
+                    <span class="bg-limu-lightteal/50 text-limu-navy px-2.5 py-0.5 rounded-md">الإصدار 1.0 - معتمد</span>
+                    <span>تاريخ الاعتماد: 23/09/2026</span>
+                </div>
+                <h2 class="text-2xl font-extrabold text-slate-800">منصة متابعة برنامج التدقيق الداخلي السنوي</h2>
+                <p class="text-slate-600 text-sm max-w-3xl leading-relaxed">
+                    تُوفر هذه المنصة متابعة تفاعلية شاملة لجدول زيارات التدقيق الداخلي بالجامعة، المرجعيات المعيارية (ISO 19011 و ISO 9001)، وتوزيع الأحمال التشغيلية عبر جميع الكليات والإدارات والمراكز والأقسام.
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                <button onclick="exportToCSV()" class="flex-1 sm:flex-none px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-2 border border-slate-300">
+                    <i class="fa-solid fa-file-excel text-emerald-600 text-sm"></i> تصدير البيانات (Excel)
+                </button>
+                <button onclick="window.print()" class="flex-1 sm:flex-none px-4 py-2.5 bg-limu-navy hover:bg-limu-blue text-white text-xs font-bold rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-print text-sm"></i> طباعة التقرير
+                </button>
+            </div>
+        </div>
+
+        <!-- KPI Metrics Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Metric 1 -->
+            <div class="glass-card rounded-2xl p-4 shadow-sm relative overflow-hidden group">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xs font-bold text-slate-500 mb-1">إجمالي عمليات التدقيق</p>
+                        <h3 class="text-2xl font-black text-limu-navy" id="kpiTotalAudits">63</h3>
+                        <p class="text-[11px] text-slate-400 mt-1">جلسة تدقيق مجدولة</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-limu-navy flex items-center justify-center text-lg font-bold group-hover:scale-110 transition">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 right-0 left-0 h-1 bg-limu-navy"></div>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="glass-card rounded-2xl p-4 shadow-sm relative overflow-hidden group">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xs font-bold text-slate-500 mb-1">الوحدات التنظيمية الخاضعة</p>
+                        <h3 class="text-2xl font-black text-limu-blue" id="kpiTotalUnits">79</h3>
+                        <p class="text-[11px] text-slate-400 mt-1">كلية / إدارة / مركز / قسم</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-xl bg-teal-50 text-limu-teal flex items-center justify-center text-lg font-bold group-hover:scale-110 transition">
+                        <i class="fa-solid fa-sitemap"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 right-0 left-0 h-1 bg-limu-teal"></div>
+            </div>
+
+            <!-- Metric 3 -->
+            <div class="glass-card rounded-2xl p-4 shadow-sm relative overflow-hidden group">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xs font-bold text-slate-500 mb-1">المعايير الفرعية المطبقة</p>
+                        <h3 class="text-2xl font-black text-amber-600">31 / 31</h3>
+                        <p class="text-[11px] text-emerald-600 font-semibold mt-1">امتثال تام (0% استبعاد)</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg font-bold group-hover:scale-110 transition">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 right-0 left-0 h-1 bg-amber-500"></div>
+            </div>
+
+            <!-- Metric 4 -->
+            <div class="glass-card rounded-2xl p-4 shadow-sm relative overflow-hidden group">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xs font-bold text-slate-500 mb-1">منهجية الحوكمة والجاهزية</p>
+                        <h3 class="text-2xl font-black text-emerald-600">100%</h3>
+                        <p class="text-[11px] text-slate-400 mt-1">جاهزية للاعتماد المؤسسي</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg font-bold group-hover:scale-110 transition">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 right-0 left-0 h-1 bg-emerald-500"></div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex items-center gap-2 bg-slate-200/80 p-1.5 rounded-2xl overflow-x-auto custom-scrollbar">
+            <button onclick="switchTab('schedule')" id="tab-schedule" class="tab-btn active px-5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 whitespace-nowrap">
+                <i class="fa-solid fa-calendar-days"></i> الجدول التفصيلي للتدقيق (63)
+            </button>
+            <button onclick="switchTab('analytics')" id="tab-analytics" class="tab-btn px-5 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-300 transition flex items-center gap-2 whitespace-nowrap">
+                <i class="fa-solid fa-chart-line"></i> تحليل توزيع الأحمال الشهري
+            </button>
+            <button onclick="switchTab('standards')" id="tab-standards" class="tab-btn px-5 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-300 transition flex items-center gap-2 whitespace-nowrap">
+                <i class="fa-solid fa-list-check"></i> المرجعيات والمعايير والسياسات
+            </button>
+            <button onclick="switchTab('approval')" id="tab-approval" class="tab-btn px-5 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-300 transition flex items-center gap-2 whitespace-nowrap">
+                <i class="fa-solid fa-signature"></i> فريق العمل والاعتمادات الرسمية
+            </button>
+        </div>
+
+        <!-- TAB CONTENT 1: Audit Schedule Table & Filters -->
+        <section id="content-schedule" class="space-y-4">
+            
+            <!-- Filters Box -->
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 space-y-3">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+                    <!-- Search Input -->
+                    <div class="relative w-full md:w-80">
+                        <i class="fa-solid fa-search absolute right-3.5 top-3 text-slate-400 text-xs"></i>
+                        <input type="text" id="searchInput" oninput="applyFilters()" placeholder="بحث باسم الجهة أو نوعها أو المعيار..." 
+                            class="w-full pl-3 pr-9 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-limu-blue text-slate-800 font-medium">
+                    </div>
+
+                    <!-- Category Filter dropdowns -->
+                    <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+                        <!-- Entity Type Filter -->
+                        <select id="typeFilter" onchange="applyFilters()" class="bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-limu-blue">
+                            <option value="ALL">جميع أنواع الجهات</option>
+                            <option value="برنامج">برنامج أكاديمي</option>
+                            <option value="إدارة">إدارة / إدارة عامة</option>
+                            <option value="مركز">مركز</option>
+                            <option value="قسم">قسم</option>
+                            <option value="كلية">كلية</option>
+                            <option value="مكتب">مكتب / مجالس / وكالة</option>
+                        </select>
+
+                        <!-- Month Filter -->
+                        <select id="monthFilter" onchange="applyFilters()" class="bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-limu-blue">
+                            <option value="ALL">جميع الأشهر</option>
+                            <option value="10-2026">أكتوبر 2026</option>
+                            <option value="11-2026">نوفمبر 2026</option>
+                            <option value="12-2026">ديسمبر 2026</option>
+                            <option value="01-2027">يناير 2027</option>
+                            <option value="02-2027">فبراير 2027</option>
+                            <option value="03-2027">مارس 2027</option>
+                            <option value="04-2027">أبريل 2027</option>
+                            <option value="05-2027">مايو 2027</option>
+                            <option value="06-2027">يونيو 2027</option>
+                            <option value="07-2027">يوليو 2027</option>
+                        </select>
+
+                        <!-- Status Filter -->
+                        <select id="statusFilter" onchange="applyFilters()" class="bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-limu-blue">
+                            <option value="ALL">جميع الحالات</option>
+                            <option value="مجدول">مجدول</option>
+                            <option value="قيد التنفيذ">قيد التنفيذ</option>
+                            <option value="مكتمل">مكتمل</option>
+                        </select>
+
+                        <button onclick="resetFilters()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl text-xs font-bold transition" title="إعادة ضبط الفلاتر">
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Filter Counter -->
+                <div class="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-slate-100">
+                    <span>عرض <strong id="showingCount" class="text-limu-navy font-bold">63</strong> من أصل <strong class="text-slate-800">63</strong> عملية تدقيق</span>
+                    <span class="text-slate-400"><i class="fa-solid fa-circle-info me-1"></i> انقر على أي جهة لاستعراض بطاقة التدقيق الكاملة</span>
+                </div>
+            </div>
+
+            <!-- Audit Table -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="overflow-x-auto custom-scrollbar">
+                    <table class="w-full text-right text-xs">
+                        <thead class="bg-slate-800 text-slate-200 uppercase font-bold border-b border-slate-700">
+                            <tr>
+                                <th class="py-3.5 px-4 text-center w-12">م</th>
+                                <th class="py-3.5 px-4">اسم الجهة الخاضعة للتدقيق</th>
+                                <th class="py-3.5 px-4 w-32">نوع الجهة</th>
+                                <th class="py-3.5 px-4 w-32">تاريخ التدقيق</th>
+                                <th class="py-3.5 px-4">المعايير المطبقة</th>
+                                <th class="py-3.5 px-4 w-28 text-center">الحالة</th>
+                                <th class="py-3.5 px-4 w-20 text-center">التفاصيل</th>
+                            </tr>
+                        </thead>
+                        <tbody id="auditTableBody" class="divide-y divide-slate-100 font-medium">
+                            <!-- JS populated rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB CONTENT 2: Load Balancing Analytics -->
+        <section id="content-analytics" class="space-y-6 hidden">
+            <!-- Analytics Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-lg bg-blue-100 text-limu-navy flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-slate-800">ذروة التدقيق</h4>
+                    </div>
+                    <p class="text-2xl font-black text-limu-navy">ديسمبر 2026</p>
+                    <p class="text-xs text-slate-500 mt-1">16 عملية تدقيق (18 وحدة تنظيمية)</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 text-limu-teal flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-slate-800">معدل التوازن النهائي</h4>
+                    </div>
+                    <p class="text-2xl font-black text-limu-teal">6.3 عملية / شهر</p>
+                    <p class="text-xs text-slate-500 mt-1">تراوح منظم لتجنب تداخل الفصول الأكاديمية</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-slate-800">الفترة الممتدة</h4>
+                    </div>
+                    <p class="text-2xl font-black text-amber-600">10 أشهر متتالية</p>
+                    <p class="text-xs text-slate-500 mt-1">من 17 أكتوبر 2026 إلى 31 يوليو 2027</p>
+                </div>
+            </div>
+
+            <!-- Charts Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Bar Chart: Monthly Distribution -->
+                <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <div>
+                            <h3 class="text-base font-bold text-slate-800">جدول التوزيع الشهري وتوازن الأحمال التشغيلية</h3>
+                            <p class="text-xs text-slate-500">مقارنة عدد عمليات التدقيق الإجمالية بوالوحدات الخاضعة شهرياً</p>
+                        </div>
+                        <span class="text-xs bg-slate-100 text-slate-700 font-semibold px-2.5 py-1 rounded-lg">2026 - 2027</span>
+                    </div>
+                    <div class="h-72">
+                        <canvas id="monthlyLoadChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Doughnut Chart: Distribution by Type -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="border-b border-slate-100 pb-3">
+                        <h3 class="text-base font-bold text-slate-800">توزيع عمليات التدقيق حسب النوع</h3>
+                        <p class="text-xs text-slate-500">نسبة البرامج مقابل الإدارات والمراكز والأقسام</p>
+                    </div>
+                    <div class="h-72 flex items-center justify-center">
+                        <canvas id="entityTypeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Load Table -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="p-4 bg-slate-50 border-b border-slate-200 font-bold text-slate-800 text-sm">
+                    جدول التوزيع الشهري القياسي المعتمد (Monthly Load Balancing)
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right text-xs">
+                        <thead class="bg-slate-100 font-bold text-slate-700 border-b border-slate-200">
+                            <tr>
+                                <th class="py-3 px-4">الشهر / الفترة</th>
+                                <th class="py-3 px-4 text-center">عدد التدقيقات الإجمالي الشهري</th>
+                                <th class="py-3 px-4 text-center">عدد الوحدات الخاضعة للتدقيق</th>
+                                <th class="py-3 px-4">ملاحظات الأحمال</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            <tr>
+                                <td class="py-2.5 px-4 font-bold text-limu-navy">أكتوبر 2026</td>
+                                <td class="py-2.5 px-4 text-center font-bold">7</td>
+                                <td class="py-2.5 px-4 text-center font-bold">15</td>
+                                <td class="py-2.5 px-4 text-slate-500">انطلاق التدقيق مع التركيز على حوكمة الإدارة العليا والبرامج الأكاديمية الأولى</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 font-bold text-limu-navy">نوفمبر 2026</td>
+                                <td class="py-2.5 px-4 text-center font-bold">8</td>
+                                <td class="py-2.5 px-4 text-center font-bold">10</td>
+                                <td class="py-2.5 px-4 text-slate-500">تغطية الإدارات المساندة وشؤون الطلاب والمكتبات</td>
+                            </tr>
+                            <tr class="bg-amber-50/50">
+                                <td class="py-2.5 px-4 font-bold text-amber-800">ديسمبر 2026 (الذروة)</td>
+                                <td class="py-2.5 px-4 text-center font-bold text-amber-800">16</td>
+                                <td class="py-2.5 px-4 text-center font-bold text-amber-800">18</td>
+                                <td class="py-2.5 px-4 text-amber-900">مرحلة موسعة لتغطية كليات الهندسة والعلوم الطبية والموارد البشرية وتقنية المعلومات</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 font-bold text-limu-navy">يناير 2027</td>
+                                <td class="py-2.5 px-4 text-center font-bold">14</td>
+                                <td class="py-2.5 px-4 text-center font-bold">18</td>
+                                <td class="py-2.5 px-4 text-slate-500">استكمال المراكز الطبية والبحثية والخدمات العامة والإسكان الجامعي</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 font-bold text-limu-navy">فبراير 2027</td>
+                                <td class="py-2.5 px-4 text-center font-bold">4</td>
+                                <td class="py-2.5 px-4 text-center font-bold">4</td>
+                                <td class="py-2.5 px-4 text-slate-500">التركيز على المراكز المتخصصة وبرنامج إدارة الأعمال</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 font-bold text-limu-navy">مارس 2027</td>
+                                <td class="py-2.5 px-4 text-center font-bold">2</td>
+                                <td class="py-2.5 px-4 text-center font-bold">2</td>
+                                <td class="py-2.5 px-4 text-slate-500">برامج الدراسات العليا والماجستير المتقدمة</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 font-bold text-limu-navy">أبريل 2027</td>
+                                <td class="py-2.5 px-4 text-center font-bold">3</td>
+                                <td class="py-2.5 px-4 text-center font-bold">3</td>
+                                <td class="py-2.5 px-4 text-slate-500">برامج العلوم الصيدلانية والذكاء الاصطناعي</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 font-bold text-limu-navy">مايو 2027</td>
+                                <td class="py-2.5 px-4 text-center font-bold">3</td>
+                                <td class="py-2.5 px-4 text-center font-bold">3</td>
+                                <td class="py-2.5 px-4 text-slate-500">برامج الماجستير للعلوم الطبية والشبكات</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 font-bold text-limu-navy">يونيو 2027</td>
+                                <td class="py-2.5 px-4 text-center font-bold">3</td>
+                                <td class="py-2.5 px-4 text-center font-bold">3</td>
+                                <td class="py-2.5 px-4 text-slate-500">برامج الطب والتمريض والعلوم الطبية الأساسية</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 font-bold text-limu-navy">يوليو 2027</td>
+                                <td class="py-2.5 px-4 text-center font-bold">3</td>
+                                <td class="py-2.5 px-4 text-center font-bold">3</td>
+                                <td class="py-2.5 px-4 text-slate-500">الجولة الختامية: طب وجراحة الفم والأسنان، دكتور صيدلة، وهندسة الاتصالات</td>
+                            </tr>
+                            <tr class="bg-slate-800 text-white font-bold">
+                                <td class="py-3 px-4">الإجمالي السنوي العام</td>
+                                <td class="py-3 px-4 text-center">63 عملية تدقيق</td>
+                                <td class="py-3 px-4 text-center">79 وحدة تنظيمية</td>
+                                <td class="py-3 px-4 text-amber-300">نسبة التغطية والتنفيذ الشامل: 100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB CONTENT 3: Standards & Norms -->
+        <section id="content-standards" class="space-y-6 hidden">
+            <!-- Standards Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Reference Standards -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-limu-navy text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-800">المراجع والنماذج المعيارية المعتمدة</h3>
+                            <p class="text-xs text-slate-500">الأسس الدولية والوطنية في بناء البرنامج</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <i class="fa-solid fa-check-circle text-emerald-600 mt-0.5 text-sm"></i>
+                            <div>
+                                <strong class="text-slate-800 block">المواصفة القياسية الدولية ISO 19011:</strong>
+                                <span class="text-slate-600">إرشادات تدقيق أنظمة الإدارة، وتخطيط وتنفيذ برامج التدقيق الداخلي.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <i class="fa-solid fa-check-circle text-emerald-600 mt-0.5 text-sm"></i>
+                            <div>
+                                <strong class="text-slate-800 block">المواصفة القياسية الدولية ISO 9001:</strong>
+                                <span class="text-slate-600">نظام إدارة الجودة وضمان التحسين المستمر للعمليات.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <i class="fa-solid fa-check-circle text-emerald-600 mt-0.5 text-sm"></i>
+                            <div>
+                                <strong class="text-slate-800 block">أدلة ومعايير هيئات الاعتماد:</strong>
+                                <span class="text-slate-600">الهيئات المحلية والإقليمية والدولية ذات الصلة بالتعليم العالي.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <i class="fa-solid fa-check-circle text-emerald-600 mt-0.5 text-sm"></i>
+                            <div>
+                                <strong class="text-slate-800 block">نظام إدارة الجودة الشاملة بالجامعة (TQM):</strong>
+                                <span class="text-slate-600">جميع السياسات، الأطر المفهومية والأدلة التنظيمية المعتمدة بالجامعة الليبية الدولية.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Methodological Approach -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-limu-teal text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-800">الأسس المنهجية المعتمدة</h3>
+                            <p class="text-xs text-slate-500">منهجية التنفيذ وترتيب الأولويات التنظيمية</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-xs">
+                        <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-100 space-y-1">
+                            <h4 class="font-bold text-limu-navy flex items-center gap-2">
+                                <i class="fa-solid fa-building-columns text-limu-blue"></i>
+                                منهجية الحوكمة أولاً (Governance-First Approach)
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                البدء بتدقيق حوكمة الإدارة العليا، مجلس الجامعة، الوكالات والإدارات الاستراتيجية لتشخيص إطار الحوكمة العام وتحديد الاتجاهات وتحديد أي فجوات هيكلية قبل الانتقال للتدقيق على باقي القطاعات.
+                            </p>
+                        </div>
+
+                        <div class="bg-teal-50/60 p-4 rounded-xl border border-teal-100 space-y-1">
+                            <h4 class="font-bold text-limu-teal flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-limu-teal"></i>
+                                التدقيق الشامل على الكليات والبرامج الأكاديمية
+                            </h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                تخصيص فترات زمنية موسعة للكليات وتوزيع التدقيق على مدار العام لتغطية كافة البرامج الأكاديمية المعتمدة بالجامعة دون إحداث إرباك للعملية التعليمية.
+                            </p>
+                        </div>
+
+                        <div class="bg-amber-50/60 p-4 rounded-xl border border-amber-100 space-y-1">
+                            <h4 class="font-bold text-amber-800 flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-amber-600"></i>
+                                المعيار العام المطبق بجميع التدقيقات
+                            </h4>
+                            <p class="text-amber-900 font-semibold">
+                                "التنظيم والفاعلية الإدارية للوحدات التنظيمية" - معيار ثابت يطبق على جميع الـ 63 عملية تدقيق بلا استثناء.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- List of All Quality Criteria in the System -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <h3 class="text-base font-bold text-slate-800 border-b border-slate-100 pb-3">
+                    المعايير المعتمدة ومجالات التقييم بالجامعة (31 معياراً فرعياً مطبقاً بالكامل)
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار الإطار المؤسسي
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار القيادة والمجالس
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار التعليم والتعلم
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار شؤون الطلابية وبيئة التعلم
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار الحوكمة المالية
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار الجودة والتحسين المستمر
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار المسؤولية المجتمعية والأثر البيئي
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار مصادر التعلم والمعلومات
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار دعم البحث العلمي
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار السكن الطلابي والخدمات
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار البحث العلمي
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار شؤون أعضاء هيئة التدريس
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار رأس المال البشري
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار إدارة المخاطر
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار إدارة المعلومات والتوثيق
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار التحول الرقمي
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار المختبرات والمعامل
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار العيادات والمرافق الطبية
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار الموارد المادية والبنية التحتية
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> معيار الابتكار وريادة الأعمال
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-600"></i> التنظيم والفاعلية الإدارية (عام)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB CONTENT 4: Team Roles & Official Approvals -->
+        <section id="content-approval" class="space-y-6 hidden">
+            <!-- Team Roles Table -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                <h3 class="text-base font-bold text-slate-800 border-b border-slate-100 pb-3">
+                    الأدوار والمسؤوليات وصلاحيات فريق التدقيق
+                </h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right text-xs">
+                        <thead class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+                            <tr>
+                                <th class="py-3 px-4 w-1/4">الصفة / المسمى</th>
+                                <th class="py-3 px-4">المهام والمسؤوليات الرئيسية</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-700">
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-limu-navy">مدير برنامج التدقيق (رئيس وحدة التدقيق)</td>
+                                <td class="py-3 px-4">إعداد الخطة، اختيار وتعيين فرق التدقيق، اعتماد التقارير النهائية، ورفع التقرير السنوي لمدير إدارة الجودة الشاملة.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-limu-navy">رئيس فريق التدقيق (Lead Auditor)</td>
+                                <td class="py-3 px-4">قيادة جلسات التدقيق، توزيع المهام على المدققين، إدارة الاجتماعات الافتتاحية والختامية، وصياغة تقارير عدم المطابقة ورفع التقارير إلى رئيس وحدة التدقيق.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-limu-navy">المُدقِق (Auditor)</td>
+                                <td class="py-3 px-4">فحص الأدلة والوثائق، إجراء المقابلات، المعاينة الميدانية، والالتزام بالحيادية التامة والسرية المهنية.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-bold text-limu-navy">الجهة الخاضعة للتدقيق (Auditee)</td>
+                                <td class="py-3 px-4">تقديم الوثائق والأدلة المطلوبة، تسهيل مهام الفريق، وحضور الجلسات، وتوفير خطط الإجراءات التصحيحية.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Official Approvals Document Signatures Card -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
+                    <div>
+                        <h3 class="text-base font-bold text-slate-800">سجل الاعتماد والتصديق الرسمي على الوثيقة</h3>
+                        <p class="text-xs text-slate-500">رمز الوثيقة: LIMU-TQM-AUD-P-01 | النسخة 1.0</p>
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full border border-emerald-300">
+                        <i class="fa-solid fa-stamp me-1"></i> معتمد رسمياً
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <!-- Preparation -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3 relative">
+                        <span class="text-xs font-bold text-slate-400 block uppercase">إعداد</span>
+                        <div class="w-12 h-12 rounded-full bg-blue-100 text-limu-navy mx-auto flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-slate-800 text-sm">أ. فتحي فرج الفزاني</h4>
+                            <p class="text-xs text-slate-500">رئيس فريق التدقيق الداخلي</p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-200 text-xs font-semibold text-slate-600">
+                            التاريخ: 01 سبتمبر 2026
+                        </div>
+                    </div>
+
+                    <!-- Review -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3 relative">
+                        <span class="text-xs font-bold text-slate-400 block uppercase">مراجعة</span>
+                        <div class="w-12 h-12 rounded-full bg-teal-100 text-limu-teal mx-auto flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-slate-800 text-sm">فريق إدارة الجودة الشاملة</h4>
+                            <p class="text-xs text-slate-500">إدارة الجودة الشاملة - LIMU</p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-200 text-xs font-semibold text-slate-600">
+                            التاريخ: 22 سبتمبر 2026
+                        </div>
+                    </div>
+
+                    <!-- Approval -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3 relative border-amber-300 shadow-sm">
+                        <span class="text-xs font-bold text-amber-600 block uppercase">اعتماد</span>
+                        <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 mx-auto flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-signature"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-slate-800 text-sm">أ.د. عبد المجيد حسين محمد</h4>
+                            <p class="text-xs text-slate-500">مدير إدارة الجودة الشاملة</p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-200 text-xs font-semibold text-slate-600">
+                            التاريخ: 22 سبتمبر 2026
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-100/70 p-4 rounded-xl text-center text-xs text-slate-600 space-y-1">
+                    <p class="font-bold">جامعة الليبية الدولية – إدارة الجودة الشاملة – وحدة التدقيق الداخلي</p>
+                    <p>هذا البرنامج ملزم لكافة القطاعات المذكورة في الجدول الرئيسي ويمنع التعديل عليه إلا بإذن كتابي معتمد من مدير إدارة الجودة الشاملة.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL FOR AUDIT DETAILS -->
+    <div id="auditModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar border border-slate-200">
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-limu-navy to-limu-blue text-white p-5 rounded-t-2xl flex items-start justify-between sticky top-0 z-10">
+                <div class="space-y-1">
+                    <span id="modalCategoryBadge" class="bg-amber-400/20 text-amber-300 border border-amber-400/30 text-[11px] px-2.5 py-0.5 rounded-md font-bold">
+                        برنامج أكاديمي
+                    </span>
+                    <h3 id="modalEntityTitle" class="text-lg font-bold">اسم الجهة الخاضعة للتدقيق</h3>
+                    <p class="text-xs text-slate-300">رمز الوثيقة: LIMU-TQM-AUD-P-01</p>
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6 space-y-5 text-xs">
+                <!-- Meta Info Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                        <span class="text-slate-400 block mb-0.5">تاريخ التدقيق:</span>
+                        <strong id="modalDate" class="text-slate-800 font-bold text-sm">--</strong>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                        <span class="text-slate-400 block mb-0.5">مدة التدقيق:</span>
+                        <strong id="modalDuration" class="text-slate-800 font-bold text-sm">يوم واحد</strong>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 col-span-2 sm:col-span-1">
+                        <span class="text-slate-400 block mb-0.5">حالة التدقيق:</span>
+                        <span id="modalStatusBadge" class="font-bold text-xs px-2 py-0.5 rounded-md bg-amber-100 text-amber-800">مجدول</span>
+                    </div>
+                </div>
+
+                <!-- Applied Criteria -->
+                <div class="space-y-2">
+                    <h4 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-limu-navy"></i> المعايير المطبقة في هذا التدقيق:
+                    </h4>
+                    <div id="modalStandardsList" class="space-y-1.5">
+                        <!-- JS Dynamic list -->
+                    </div>
+                </div>
+
+                <!-- General Standard -->
+                <div class="bg-blue-50/70 p-3.5 rounded-xl border border-blue-200 space-y-1">
+                    <h5 class="font-bold text-limu-navy">المعيار العام المطبق:</h5>
+                    <p id="modalGeneralStandard" class="text-slate-700 leading-relaxed font-semibold">
+                        التنظيم والفاعلية الإدارية للوحدات التنظيمية
+                    </p>
+                </div>
+
+                <!-- Interactive Notes & Audit Log Checklist -->
+                <div class="space-y-2 pt-2 border-t border-slate-200">
+                    <h4 class="font-bold text-slate-800 text-sm flex items-center justify-between">
+                        <span><i class="fa-solid fa-square-check text-emerald-600"></i> قائمة التوثيق والمتابعة الميدانية</span>
+                        <span class="text-[11px] font-normal text-slate-400">خاصة بمسؤول التدقيق</span>
+                    </h4>
+                    <div class="space-y-2 bg-slate-50 p-3 rounded-xl border border-slate-200">
+                        <label class="flex items-center gap-2 text-slate-700 cursor-pointer">
+                            <input type="checkbox" class="rounded text-limu-navy focus:ring-limu-navy">
+                            <span>تم عقد الجلسة الافتتاحية والتحقق من الحضور</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-slate-700 cursor-pointer">
+                            <input type="checkbox" class="rounded text-limu-navy focus:ring-limu-navy">
+                            <span>تم فحص الأدلة والوثائق والملفات المعتمدة</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-slate-700 cursor-pointer">
+                            <input type="checkbox" class="rounded text-limu-navy focus:ring-limu-navy">
+                            <span>تمت المعاينة الميدانية وتعبئة كشوفات التقييم</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-slate-700 cursor-pointer">
+                            <input type="checkbox" class="rounded text-limu-navy focus:ring-limu-navy">
+                            <span>تمت صياغة ملاحظات التدقيق والتقرير المبدئي</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="font-bold text-slate-800 text-xs">ملاحظات فريق التدقيق الميدانية:</label>
+                    <textarea id="modalNotesText" rows="3" placeholder="أدخل الملاحظات الأولية للتدقيق أو حالات عدم المطابقة المكتشفة..." 
+                        class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-limu-blue"></textarea>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 bg-slate-100 rounded-b-2xl border-t border-slate-200 flex justify-end gap-2">
+                <button onclick="saveModalNotes()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-floppy-disk"></i> حفظ التحديثات
+                </button>
+                <button onclick="closeModal()" class="px-4 py-2 bg-slate-300 hover:bg-slate-400 text-slate-700 font-bold rounded-xl text-xs transition">
+                    إغلاق
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Full dataset of all 63 audit sessions strictly matching the approved document
+        const auditData = [
+            { id: 1, name: "مكتب شؤون رئيس الجامعة / مكتب شؤون مجلس الجامعة / الإدارة القانونية", type: "مكتب", duration: "يوم واحد", date: "2026-10-17", standards: ["معيار الإطار المؤسسي", "معيار القيادة والمجالس"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 2, name: "برنامج ليسانس القانون", type: "برنامج", duration: "يوم واحد", date: "2026-10-18", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 3, name: "إدارة الشؤون المالية / إدارة الميزانية التقديرية والأصول / إدارة الرقابة الداخلية", type: "إدارة", duration: "يوم واحد", date: "2026-10-22", standards: ["معيار الحوكمة المالية"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 4, name: "إدارة الجودة الشاملة", type: "إدارة", duration: "يوم واحد", date: "2026-10-22", standards: ["معيار الجودة والتحسين المستمر"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 5, name: "برنامج اللغة الإنجليزية والتواصل العالمي", type: "برنامج", duration: "يوم واحد", date: "2026-10-26", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 6, name: "وكالة الجامعة للمسؤولية المجتمعية والاستدامة / إدارة للمسؤولية المجتمعية الاستدامة / إدارة البيئة والاستدامة", type: "مكتب", duration: "يوم واحد", date: "2026-10-27", standards: ["معيار المسؤولية المجتمعية والأثر البيئي"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 7, name: "وكالة الجامعة لشؤون التعلم / إدارة شؤون التعلم / قسم التوثيق الأكاديمي", type: "مكتب", duration: "يوم واحد", date: "2026-10-27", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            
+            { id: 8, name: "قسم التعليم الإلكتروني", type: "قسم", duration: "يوم واحد", date: "2026-11-15", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلبة وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 9, name: "برنامج التمويل والمصارف", type: "برنامج", duration: "يوم واحد", date: "2026-11-16", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 10, name: "قسم شؤون المكتبات", type: "قسم", duration: "يوم واحد", date: "2026-11-17", standards: ["معيار شؤون الطلبة وبيئة التعلم", "معيار مصادر التعلم والمعلومات", "معيار دعم البحث العلمي"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 11, name: "قسم شؤون الطلاب الوافدين", type: "قسم", duration: "يوم واحد", date: "2026-11-22", standards: ["معيار شؤون الطلبة وبيئة التعلم", "معيار السكن الطلابي والخدمات الجامعية الداعمة"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 12, name: "برنامج هندسة التصميم الداخلي", type: "برنامج", duration: "يوم واحد", date: "2026-11-22", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 13, name: "إدارة المسجل العام", type: "إدارة", duration: "يوم واحد", date: "2026-11-24", standards: ["معيار شؤون الطلبة وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 14, name: "الإدارة العامة للاتصال / المركز الإعلامي / إدارة التسويق", type: "إدارة", duration: "يوم واحد", date: "2026-11-26", standards: ["التنظيم والفاعلية الإدارية للوحدات التنظيمية"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 15, name: "إدارة التخطيط", type: "إدارة", duration: "يوم واحد", date: "2026-11-28", standards: ["معيار الإطار المؤسسي"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+
+            { id: 16, name: "وكالة الجامعة للدراسات العليا / إدارة الدراسات العليا", type: "مكتب", duration: "يوم واحد", date: "2026-12-02", standards: ["معيار البحث العلمي", "معيار شؤون أعضاء هيئة التدريس", "معيار رأس المال البشري"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 17, name: "برنامج هندسة الميكاترونكس", type: "برنامج", duration: "يوم واحد", date: "2026-12-02", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 18, name: "إدارة المخاطر والفرص", type: "إدارة", duration: "يوم واحد", date: "2026-12-03", standards: ["معيار إدارة المخاطر"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 19, name: "برنامج التسويق (الجولة الأولية)", type: "برنامج", duration: "يوم واحد", date: "2026-12-07", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 20, name: "كلية الهندسة والتكنولوجيا", type: "كلية", duration: "يوم واحد", date: "2026-12-09", standards: ["معيار البحث العلمي", "معيار شؤون أعضاء هيئة التدريس", "معيار رأس المال البشري"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 21, name: "إدارة المعلومات ودعم القرار", type: "إدارة", duration: "يوم واحد", date: "2026-12-10", standards: ["معيار إدارة المعلومات والتوثيق"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 22, name: "إدارة العلاقات الاكاديمية والدولية", type: "إدارة", duration: "يوم واحد", date: "2026-12-10", standards: ["معيار البحث العلمي"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 23, name: "الإدارة العامة للموارد البشرية / إدارة الشؤون الإدارية والخدمات", type: "إدارة", duration: "يوم واحد", date: "2026-12-10", standards: ["معيار رأس المال البشري"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 24, name: "إدارة شؤون أعضاء هيئة التدريس", type: "إدارة", duration: "يوم واحد", date: "2026-12-13", standards: ["معيار شؤون أعضاء هيئة التدريس", "معيار رأس المال البشري"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 25, name: "برنامج التسويق (الجولة المكملة)", type: "برنامج", duration: "يوم واحد", date: "2026-12-14", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 26, name: "الإدارة العامة لتقنية المعلومات والاتصالات", type: "إدارة", duration: "يوم واحد", date: "2026-12-17", standards: ["معيار شؤون الطلبة وبيئة التعلم", "معيار التحول الرقمي"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 27, name: "مركز البحوث والاستشارات", type: "مركز", duration: "يوم واحد", date: "2026-12-20", standards: ["معيار البحث العلمي"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 28, name: "مركز التدريب والتعلم المستمر", type: "مركز", duration: "يوم واحد", date: "2026-12-22", standards: ["معيار شؤون أعضاء هيئة التدريس", "معيار رأس المال البشري"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 29, name: "كلية العلوم الطبية والصحية", type: "كلية", duration: "يوم واحد", date: "2026-12-23", standards: ["معيار البحث العلمي", "معيار شؤون أعضاء هيئة التدريس", "معيار رأس المال البشري"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 30, name: "برنامج إدارة المشاريع", type: "برنامج", duration: "يوم واحد", date: "2026-12-23", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 31, name: "مركز المحاكاة المتقدمة", type: "مركز", duration: "يوم واحد", date: "2026-12-27", standards: ["معيار شؤون الطلبة وبيئة التعلم", "معيار المختبرات والمعامل والمرافق الفنية والتقنية", "معيار العيادات التعليمية والمرافق الطبية"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+
+            { id: 32, name: "الإدارة العامة للشؤون العامة / قسم الشؤون الإدارية / قسم الخدمات العامة / قسم المشتريات / قسم الأمن الجامعي", type: "إدارة", duration: "يوم واحد", date: "2027-01-03", standards: ["معيار الموارد المادية والبنية التحتية", "معيار شؤون الطلبة وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 33, name: "كلية العلوم الإنسانية والاجتماعية", type: "كلية", duration: "يوم واحد", date: "2027-01-04", standards: ["معيار البحث العلمي", "معيار شؤون أعضاء هيئة التدريس", "معيار رأس المال البشري", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 34, name: "برنامج الشبكات والأمن السيبراني", type: "برنامج", duration: "يوم واحد", date: "2027-01-04", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 35, name: "إدارة الشؤون الفنية والمشاريع", type: "إدارة", duration: "يوم واحد", date: "2027-01-07", standards: ["معيار حوكمة الموارد والبنية التحتية", "معيار الموارد المادية والبنية التحتية", "معيار شؤون الطلبة وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 36, name: "قسم الصحة والسلامة والبيئة", type: "قسم", duration: "يوم واحد", date: "2027-01-12", standards: ["معيار الموارد المادية والبنية التحتية"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 37, name: "قسم الإسكان الجامعي", type: "قسم", duration: "يوم واحد", date: "2027-01-12", standards: ["معيار شؤون الطلبة وبيئة التعلم", "معيار السكن الطلابي والخدمات الجامعية الداعمة"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 38, name: "برنامج هندسة البرمجيات", type: "برنامج", duration: "يوم واحد", date: "2027-01-13", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 39, name: "الإدارة العامة للمرافق الصحية التعليمية", type: "إدارة", duration: "يوم واحد", date: "2027-01-14", standards: ["معيار المختبرات والمعامل والمرافق الفنية والتقنية", "معيار العيادات التعليمية والمرافق الطبية", "معيار شؤون الطلبة وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 40, name: "برنامج هندسة العمارة والإنشاءات", type: "برنامج", duration: "يوم واحد", date: "2027-01-20", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 41, name: "المركز الطبي الجامعي", type: "مركز", duration: "يوم واحد", date: "2027-01-21", standards: ["معيار المختبرات والمعامل والمرافق الفنية والتقنية", "معيار العيادات التعليمية والمرافق الطبية"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 42, name: "مركز طب الأسنان", type: "مركز", duration: "يوم واحد", date: "2027-01-24", standards: ["معيار المختبرات والمعامل والمرافق الفنية والتقنية", "معيار العيادات التعليمية والمرافق الطبية"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 43, name: "مركز نجيب الحصادي للتفكير الناقد", type: "مركز", duration: "يوم واحد", date: "2027-01-25", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 44, name: "مركز الذكاء الاصطناعي", type: "مركز", duration: "يوم واحد", date: "2027-01-26", standards: ["معيار التحول الرقمي المؤسسي"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 45, name: "مركز القيادة والريادة والابتكار", type: "مركز", duration: "يوم واحد", date: "2027-01-28", standards: ["معيار الابتكار وريادة الأعمال المؤسسية", "معيار البحث العلمي"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+
+            { id: 46, name: "برنامج المعلوماتية الصحية", type: "برنامج", duration: "يوم واحد", date: "2027-02-01", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 47, name: "مركز التغيير", type: "مركز", duration: "يوم واحد", date: "2027-02-02", standards: ["التنظيم والفاعلية الإدارية للوحدات التنظيمية"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 48, name: "مركز الدراسات القانونية الدولي", type: "مركز", duration: "يوم واحد", date: "2027-02-04", standards: ["التنظيم والفاعلية الإدارية للوحدات التنظيمية"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 49, name: "برنامج إدارة الأعمال", type: "برنامج", duration: "يوم واحد", date: "2027-02-06", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+
+            { id: 50, name: "برنامج ماجستير إدارة الرعاية الصحية", type: "برنامج", duration: "يوم واحد", date: "2027-03-17", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 51, name: "برنامج ماجستير الصيدلة السريرية", type: "برنامج", duration: "يوم واحد", date: "2027-03-29", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+
+            { id: 52, name: "برنامج ماجستير العلوم الصيدلانية", type: "برنامج", duration: "يوم واحد", date: "2027-04-07", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 53, name: "برنامج الذكاء الاصطناعي", type: "برنامج", duration: "يوم واحد", date: "2027-04-14", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 54, name: "برنامج ماجستير الوراثة الخلوية", type: "برنامج", duration: "يوم واحد", date: "2027-04-21", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+
+            { id: 55, name: "برنامج ماجستير في طب الأسرة", type: "برنامج", duration: "يوم واحد", date: "2027-05-03", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 56, name: "برنامج ماجستير الكيمياء السريرية", type: "برنامج", duration: "يوم واحد", date: "2027-05-12", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 57, name: "برنامج ماجستير الشبكات والأمن السيبراني", type: "برنامج", duration: "يوم واحد", date: "2027-05-24", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+
+            { id: 58, name: "برنامج التمريض", type: "برنامج", duration: "يوم واحد", date: "2027-06-02", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 59, name: "برنامج الطب", type: "برنامج", duration: "يوم واحد", date: "2027-06-14", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 60, name: "برنامج العلوم الطبية الأساسية", type: "برنامج", duration: "يوم واحد", date: "2027-06-23", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+
+            { id: 61, name: "برنامج طب وجراحة الفم والأسنان", type: "برنامج", duration: "يوم واحد", date: "2027-07-07", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 62, name: "برنامج دكتور صيدلة", type: "برنامج", duration: "يوم واحد", date: "2027-07-19", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" },
+            { id: 63, name: "برنامج هندسة الاتصالات", type: "برنامج", duration: "يوم واحد", date: "2027-07-28", standards: ["معيار التعليم والتعلم", "معيار شؤون الطلابية وبيئة التعلم"], generalStandard: "التنظيم والفاعلية الإدارية للوحدات التنظيمية", status: "مجدول" }
+        ];
+
+        let filteredData = [...auditData];
+        let currentModalId = null;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderTable();
+            initCharts();
+        });
+
+        function renderTable() {
+            const tbody = document.getElementById('auditTableBody');
+            tbody.innerHTML = '';
+
+            document.getElementById('showingCount').innerText = filteredData.length;
+
+            if (filteredData.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" class="py-8 text-center text-slate-400">
+                            <i class="fa-solid fa-folder-open text-3xl mb-2 block"></i>
+                            لا توجد عمليات تدقيق تطابق معايير البحث المحددة.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            filteredData.forEach((item, index) => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50 transition cursor-pointer";
+                tr.onclick = (e) => {
+                    if(!e.target.closest('button')) openModal(item.id);
+                };
+
+                // Type Badge Styling
+                let typeBadgeClass = "bg-slate-100 text-slate-700";
+                if(item.type === "برنامج") typeBadgeClass = "bg-blue-100 text-blue-800 border border-blue-200";
+                else if(item.type === "إدارة") typeBadgeClass = "bg-purple-100 text-purple-800 border border-purple-200";
+                else if(item.type === "مركز") typeBadgeClass = "bg-teal-100 text-teal-800 border border-teal-200";
+                else if(item.type === "كلية") typeBadgeClass = "bg-indigo-100 text-indigo-800 border border-indigo-200";
+                else if(item.type === "قسم") typeBadgeClass = "bg-amber-100 text-amber-800 border border-amber-200";
+                else if(item.type === "مكتب") typeBadgeClass = "bg-emerald-100 text-emerald-800 border border-emerald-200";
+
+                // Formatted Date
+                const dateObj = new Date(item.date);
+                const formattedDate = item.date;
+
+                // Standards Tags
+                const standardsHTML = item.standards.map(s => `<span class="inline-block bg-slate-100 text-slate-700 px-2 py-0.5 rounded text-[10px] me-1 mb-1 border border-slate-200">${s}</span>`).join('');
+
+                tr.innerHTML = `
+                    <td class="py-3 px-4 text-center font-bold text-slate-400">${item.id}</td>
+                    <td class="py-3 px-4 font-bold text-slate-800">${item.name}</td>
+                    <td class="py-3 px-4"><span class="px-2.5 py-1 rounded-md text-[11px] font-bold ${typeBadgeClass}">${item.type}</span></td>
+                    <td class="py-3 px-4 font-bold text-limu-navy">${formattedDate}</td>
+                    <td class="py-3 px-4">${standardsHTML}</td>
+                    <td class="py-3 px-4 text-center">
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">
+                            ${item.status}
+                        </span>
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                        <button onclick="openModal(${item.id})" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-limu-navy hover:text-white text-slate-600 flex items-center justify-center transition">
+                            <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function applyFilters() {
+            const searchValue = document.getElementById('searchInput').value.trim().toLowerCase();
+            const typeValue = document.getElementById('typeFilter').value;
+            const monthValue = document.getElementById('monthFilter').value;
+            const statusValue = document.getElementById('statusFilter').value;
+
+            filteredData = auditData.filter(item => {
+                // Search Filter
+                const matchesSearch = item.name.toLowerCase().includes(searchValue) ||
+                                      item.type.toLowerCase().includes(searchValue) ||
+                                      item.standards.some(s => s.toLowerCase().includes(searchValue));
+
+                // Type Filter
+                const matchesType = (typeValue === "ALL") || item.type.includes(typeValue);
+
+                // Month Filter
+                let matchesMonth = true;
+                if (monthValue !== "ALL") {
+                    const [targetMonth, targetYear] = monthValue.split('-');
+                    const itemDate = new Date(item.date);
+                    const itemMonth = String(itemDate.getMonth() + 1).padStart(2, '0');
+                    const itemYear = String(itemDate.getFullYear());
+                    matchesMonth = (itemMonth === targetMonth && itemYear === targetYear);
+                }
+
+                // Status Filter
+                const matchesStatus = (statusValue === "ALL") || (item.status === statusValue);
+
+                return matchesSearch && matchesType && matchesMonth && matchesStatus;
+            });
+
+            renderTable();
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('typeFilter').value = 'ALL';
+            document.getElementById('monthFilter').value = 'ALL';
+            document.getElementById('statusFilter').value = 'ALL';
+            filteredData = [...auditData];
+            renderTable();
+        }
+
+        // Tab Switching
+        function switchTab(tabKey) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`tab-${tabKey}`).classList.add('active');
+
+            document.getElementById('content-schedule').classList.add('hidden');
+            document.getElementById('content-analytics').classList.add('hidden');
+            document.getElementById('content-standards').classList.add('hidden');
+            document.getElementById('content-approval').classList.add('hidden');
+
+            document.getElementById(`content-${tabKey}`).classList.remove('hidden');
+        }
+
+        // Modal Handling
+        function openModal(id) {
+            currentModalId = id;
+            const item = auditData.find(a => a.id === id);
+            if (!item) return;
+
+            document.getElementById('modalEntityTitle').innerText = item.name;
+            document.getElementById('modalCategoryBadge').innerText = item.type;
+            document.getElementById('modalDate').innerText = item.date;
+            document.getElementById('modalDuration').innerText = item.duration;
+            document.getElementById('modalGeneralStandard').innerText = item.generalStandard;
+
+            const standardsContainer = document.getElementById('modalStandardsList');
+            standardsContainer.innerHTML = item.standards.map(s => `
+                <div class="flex items-center gap-2 bg-slate-100 p-2 rounded-lg text-slate-800 font-semibold border border-slate-200">
+                    <i class="fa-solid fa-shield-halved text-amber-500"></i> ${s}
+                </div>
+            `).join('');
+
+            document.getElementById('modalNotesText').value = item.notes || '';
+
+            document.getElementById('auditModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('auditModal').classList.add('hidden');
+        }
+
+        function saveModalNotes() {
+            if (currentModalId) {
+                const item = auditData.find(a => a.id === currentModalId);
+                if (item) {
+                    item.notes = document.getElementById('modalNotesText').value;
+                    alert('تم حفظ التحديثات والملاحظات بنجاح في سجل المتابعة.');
+                }
+            }
+            closeModal();
+        }
+
+        function initCharts() {
+            // Monthly Load Bar Chart
+            const ctxMonthly = document.getElementById('monthlyLoadChart').getContext('2d');
+            new Chart(ctxMonthly, {
+                type: 'bar',
+                data: {
+                    labels: ['أكتوبر 2026', 'نوفمبر 2026', 'ديسمبر 2026', 'يناير 2027', 'فبراير 2027', 'مارس 2027', 'أبريل 2027', 'مايو 2027', 'يونيو 2027', 'يوليو 2027'],
+                    datasets: [
+                        {
+                            label: 'عدد التدقيقات المجدولة',
+                            data: [7, 8, 16, 14, 4, 2, 3, 3, 3, 3],
+                            backgroundColor: '#0f2b48',
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'عدد الوحدات التنظيمية الخاضعة',
+                            data: [15, 10, 18, 18, 4, 2, 3, 3, 3, 3],
+                            backgroundColor: '#62b6cb',
+                            borderRadius: 6
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top', labels: { font: { family: 'Cairo', size: 11 } } }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 2 } }
+                    }
+                }
+            });
+
+            // Entity Type Doughnut Chart
+            const ctxType = document.getElementById('entityTypeChart').getContext('2d');
+            new Chart(ctxType, {
+                type: 'doughnut',
+                data: {
+                    labels: ['برامج أكاديمية', 'إدارات عامة', 'مراكز متخصصة', 'أقسام تشغيلية', 'كليات جامعيات', 'مكاتب ووكالات'],
+                    datasets: [{
+                        data: [31, 14, 8, 4, 3, 3],
+                        backgroundColor: [
+                            '#1b4965',
+                            '#62b6cb',
+                            '#bee9e8',
+                            '#d4af37',
+                            '#334155',
+                            '#10b981'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: 'Cairo', size: 10 } } }
+                    }
+                }
+            });
+        }
+
+        // Export to CSV Functionality
+        function exportToCSV() {
+            let csvContent = "\uFEFFم,اسم الجهة الخاضعة للتدقيق,نوع الجهة,تاريخ التدقيق,المعايير المطبقة,الحالة\n";
+            filteredData.forEach(item => {
+                const standardsStr = `"${item.standards.join(' - ')}"`;
+                const nameStr = `"${item.name}"`;
+                csvContent += `${item.id},${nameStr},${item.type},${item.date},${standardsStr},${item.status}\n`;
+            });
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("download", "جدول_برنامج_التدقيق_الداخلي_الجامعة_الليبية_الدولية_2026_2027.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
